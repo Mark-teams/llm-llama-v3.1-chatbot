@@ -1,7 +1,1 @@
-ipywidgets==8.1.2
-matplotlib==3.5.2
-pandas==1.5.3
-torch==2.3.0
-torchvision==0.18.0
-tqdm==4.66.4
 flet==0.22.0
