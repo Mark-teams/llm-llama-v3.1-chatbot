@@ -3,7 +3,7 @@ import os
 # os.system("sudo apr-get install -y pciutils")
 # os.system("curl -fsSL https://ollama.com/install.sh | sh")
 
-from IPython.display import clear_output
+# from IPython.display import clear_output
 from flask import Flask, render_template,jsonify,request
 
 app = Flask(__name__)
@@ -15,24 +15,24 @@ import subprocess
 import requests
 import json
 
-def ollama():
-  os.environ['OLLAMA_HOST']='0.0.0.0:11434'
-  os.environ['OLLAMA_ORIGINS']='*'
-  subprocess.Popen(["ollama","serve"])
+# def ollama():
+#   os.environ['OLLAMA_HOST']='0.0.0.0:11434'
+#   os.environ['OLLAMA_ORIGINS']='*'
+#   subprocess.Popen(["ollama","serve"])
 
-ollama_thread=threading.Thread(target=ollama)
-ollama_thread.start()
+# ollama_thread=threading.Thread(target=ollama)
+# ollama_thread.start()
 
-from IPython.display import clear_output
-# os.system("ollama pull llama3.1:8b")
-clear_output()
+# from IPython.display import clear_output
+# # os.system("ollama pull llama3.1:8b")
+# clear_output()
 
 # os.system("pip install -U lightrag[ollama]")
 
-from lightrag.core.generator import Generator
-from lightrag.core.component import Component
-from lightrag.core.model_client import ModelClient
-from lightrag.components.model_client import OllamaClient,GroqAPIClient
+# from lightrag.core.generator import Generator
+# from lightrag.core.component import Component
+# from lightrag.core.model_client import ModelClient
+# from lightrag.components.model_client import OllamaClient,GroqAPIClient
 
 # import time
 # qa_template = r"""<SYS>
