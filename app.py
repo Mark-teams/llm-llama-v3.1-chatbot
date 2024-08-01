@@ -1,7 +1,7 @@
 import os
 # os.system("pip install flask")
-!sudo apr-get install -y pciutils
-!curl -fsSL https://ollama.com/install.sh | sh
+os.system("apr-get install -y pciutils")
+os.system("curl -fsSL https://ollama.com/install.sh | sh")
 
 
 # from IPython.display import clear_output
