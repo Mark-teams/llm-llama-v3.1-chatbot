@@ -1,7 +1,8 @@
 import os
 # os.system("pip install flask")
-os.system("sudo apr-get install -y pciutils")
-os.system("curl -fsSL https://ollama.com/install.sh | sh")
+!sudo apr-get install -y pciutils
+!curl -fsSL https://ollama.com/install.sh | sh
+
 
 # from IPython.display import clear_output
 from flask import Flask, render_template,jsonify,request
@@ -24,7 +25,7 @@ ollama_thread=threading.Thread(target=ollama)
 ollama_thread.start()
 
 from IPython.display import clear_output
-os.system("ollama pull llama3.1:8b")
+!ollama pull llama3.1:8b
 clear_output()
 
 os.system("pip install -U lightrag[ollama]")
