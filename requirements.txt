@@ -2,4 +2,5 @@ flet==0.22.0
 flask==3.0.3
 requests==2.32.3
 json5==0.9.25
+ipython==8.26.0
 gunicorn
