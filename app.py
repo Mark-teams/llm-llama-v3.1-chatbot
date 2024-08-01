@@ -23,9 +23,9 @@ def ollama():
 ollama_thread=threading.Thread(target=ollama)
 ollama_thread.start()
 
-from IPython.display import clear_output
+# from IPython.display import clear_output
 os.system("ollama pull llama3.1:8b")
-clear_output()
+# clear_output()
 
 os.system("pip install -U lightrag[ollama]")
 
