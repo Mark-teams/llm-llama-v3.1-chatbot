@@ -10,7 +10,6 @@ from flask import Flask, render_template,jsonify,request
 app = Flask(__name__)
 
 ####
-import os
 import threading
 import subprocess
 import requests
@@ -25,7 +24,7 @@ ollama_thread=threading.Thread(target=ollama)
 ollama_thread.start()
 
 from IPython.display import clear_output
-!ollama pull llama3.1:8b
+os.system("ollama pull llama3.1:8b")
 clear_output()
 
 os.system("pip install -U lightrag[ollama]")
