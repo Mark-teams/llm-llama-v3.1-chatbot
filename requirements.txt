@@ -1,7 +1,5 @@
 flet==0.22.0
 flask==3.0.3
-threading==0.3.1
-subprocess==3.5.4
 requests==2.32.3
-json
+json5==0.9.25
 gunicorn
