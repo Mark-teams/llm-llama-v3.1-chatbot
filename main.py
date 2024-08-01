@@ -1,7 +1,7 @@
 import os
-os.system("pip install flask")
-os.system("sudo apr-get install -y pciutils")
-os.system("curl -fsSL https://ollama.com/install.sh | sh")
+# os.system("pip install flask")
+# os.system("sudo apr-get install -y pciutils")
+# os.system("curl -fsSL https://ollama.com/install.sh | sh")
 
 from IPython.display import clear_output
 from flask import Flask, render_template,jsonify,request
@@ -24,45 +24,45 @@ ollama_thread=threading.Thread(target=ollama)
 ollama_thread.start()
 
 from IPython.display import clear_output
-os.system("ollama pull llama3.1:8b")
+# os.system("ollama pull llama3.1:8b")
 clear_output()
 
-os.system("pip install -U lightrag[ollama]")
+# os.system("pip install -U lightrag[ollama]")
 
 from lightrag.core.generator import Generator
 from lightrag.core.component import Component
 from lightrag.core.model_client import ModelClient
 from lightrag.components.model_client import OllamaClient,GroqAPIClient
 
-import time
-qa_template = r"""<SYS>
-you are a helpful assistant.
-</Sys>
-user: {{input_str}}
-You:"""
+# import time
+# qa_template = r"""<SYS>
+# you are a helpful assistant.
+# </Sys>
+# user: {{input_str}}
+# You:"""
 
-class SimpleQA(Component):
-  def __init__(self,model_client:ModelClient, model_kwargs:dict):
-    super().__init__()
-    self.generator = Generator(
-        model_client=model_client,
-        model_kwargs=model_kwargs,
-        template=qa_template,
-    )
-  def call(self,input:dict)->str:
-    return self.generator.call({"input_str":str(input)})
-  async def acall(self,input:dict)->str:
-    return await self.generator.acall({"input_str":str(input)})
+# class SimpleQA(Component):
+#   def __init__(self,model_client:ModelClient, model_kwargs:dict):
+#     super().__init__()
+#     self.generator = Generator(
+#         model_client=model_client,
+#         model_kwargs=model_kwargs,
+#         template=qa_template,
+#     )
+#   def call(self,input:dict)->str:
+#     return self.generator.call({"input_str":str(input)})
+#   async def acall(self,input:dict)->str:
+#     return await self.generator.acall({"input_str":str(input)})
    
-from lightrag.components.model_client import OllamaClient
-from IPython.display import Markdown, display
-model={
-    "model_client":OllamaClient(),
-    "model_kwargs":{"model":"llama3.1:8b"}
-}
-qa=SimpleQA(**model)
-output=qa("what is happiness")
-display(Markdown(f"**Answer:** {output.data}"))
+# from lightrag.components.model_client import OllamaClient
+# from IPython.display import Markdown, display
+# model={
+#     "model_client":OllamaClient(),
+#     "model_kwargs":{"model":"llama3.1:8b"}
+# }
+# qa=SimpleQA(**model)
+# output=qa("what is happiness")
+# display(Markdown(f"**Answer:** {output.data}"))
 
 # home route that returns below text when root url is accessed
 @app.route("/")
